@@ -16,14 +16,7 @@ public class BikeRide {
 
 //    creating a constructor that has bicycle object
     public void ride() {
-        this.bicycle.accelerate();
-        this.bicycle.accelerate();
-        this.bicycle.accelerate();
-        this.bicycle.brake();
-        this.bicycle.brake();
-        this.bicycle.accelerate();
-    }
-
+git
     public static void main (String [] args) {
         Bicycle bicycle = new Bicycle();
         BikeRide bikeRide = new BikeRide(bicycle);
