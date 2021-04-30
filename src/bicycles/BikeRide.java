@@ -1,18 +1,44 @@
 package bicycles;
 
-public class BikeRide {
-//    How do I import the bicycle class so that I use the bicycle method?
-    public final Bicycle bicycle;
-//    Importing object "bicycle" from class Bicycle
+public class BikeRide implements Bicycle {
 
-    public BikeRide(Bicycle newRide) {
-        this.bicycle = newRide;
+    private int speed = 0;
+
+    public BikeRide(Bicycle bicycle) {
+        this.bicycle = bicycle;
     }
 
+    @Override
+    public void accelerate() {
+        speed += 5;
+    }
+
+    @Override
+    public void brake() {
+        speed -= 3;
+    }
+
+    @Override
     public int currentSpeed() {
-        System.out.println(this.bicycle.currentSpeed());
-        return this.bicycle.currentSpeed();
+        System.out.println("Your current speed is " + speed + " km/h");
+        return speed;
     }
+
+    @Override
+    public void stop() {
+        speed = 0;
+    }
+
+    public final Bicycle bicycle; //Importing object "bicycle" from class Bicycle
+//
+//    public BikeRide(Bicycle newRide) {
+//        this.bicycle = newRide;
+//    }
+////
+////    public int currentSpeed() {
+////        System.out.println(this.bicycle.currentSpeed());
+////        return this.bicycle.currentSpeed();
+////    }
 
 //    creating a constructor that has bicycle object
     public void ride() {
@@ -25,10 +51,12 @@ public class BikeRide {
     }
 
     public static void main (String [] args) {
-        Bicycle bicycle = new Bicycle();
-        BikeRide bikeRide = new BikeRide(bicycle);
-        bikeRide.ride();
-
-        System.out.println(bikeRide.currentSpeed());
+//        Bicycle bicycle = new Bicycle();
+//        BikeRide bikeRide = new BikeRide(bicycle);
+//        bikeRide.ride();
+//
+//        System.out.println(bikeRide.currentSpeed());
     }
+
+
 }
