@@ -2,6 +2,7 @@ package bicycles;
 
 import bicycles.models.MountainBike;
 import bicycles.models.RoadBike;
+import bicycles.models.Tandem;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -42,18 +43,35 @@ public class BicycleTest {
 //        assertEquals(0, bicycle.currentSpeed());
 //    }
 
+//    @Test
+//    public void MountainBikeTest() {
+//        MountainBike mountain = new MountainBike();
+//        mountain.accelerate();
+//        assertEquals(5, mountain.currentSpeed());
+//    }
+
     @Test
     public void MountainBikeTest() {
         MountainBike mountain = new MountainBike();
         mountain.accelerate();
-        assertEquals(5, mountain.currentSpeed());
+        mountain.brake();
+        assertEquals(2, mountain.currentSpeed());
     }
+
 
     @Test
     public void RoadBikeTest() {
         RoadBike road = new RoadBike();
         road.accelerate();
-        assertEquals(11, road.currentSpeed() );
+        road.brake();
+        assertEquals(7, road.currentSpeed());
     }
 
+    @Test
+    public void TandemTest() {
+        Tandem tandem = new Tandem();
+        tandem.accelerate();
+        tandem.brake();
+        assertEquals(5, tandem.currentSpeed());
+    }
 }
