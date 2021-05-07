@@ -4,15 +4,53 @@ import bicycles.models.MountainBike;
 import bicycles.models.RoadBike;
 import bicycles.models.Tandem;
 import bicycles.rides.BikeRideOne;
-import bicycles.rides.BikeRideThree;
 import bicycles.rides.BikeRideTwo;
-import bicycles.specifications.BicycleFromSpec;
-import bicycles.specifications.BicycleSpecification;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
 public class BicycleTest {
+//    @Test
+//    public void shouldAccelerate() {
+//
+//        Bicycle bicycle = new Bicycle();
+//        bicycle.accelerate();
+//        assertEquals(5, bicycle.currentSpeed());
+//    }
+//
+//    @Test
+//    public void shouldAccelerateAndBrakeCorrect() {
+//        Bicycle bicycle = new Bicycle();
+//        bicycle.accelerate();
+//        bicycle.brake();
+//        assertEquals(2, bicycle.currentSpeed());
+//    }
+//
+//    @Test
+//    public void shouldDoMultipleAcceleratesCorrectly() {
+//        Bicycle bicycle = new Bicycle();
+//        bicycle.accelerate();
+//        bicycle.accelerate();
+//        bicycle.accelerate();
+//        assertEquals(15, bicycle.currentSpeed());
+//    }
+//
+//    @Test
+//    public void shouldBeAbleToStop() {
+//        Bicycle bicycle = new Bicycle();
+//        bicycle.accelerate();
+//        bicycle.brake();
+//        bicycle.accelerate();
+//        bicycle.stop();
+//        assertEquals(0, bicycle.currentSpeed());
+//    }
+
+//    @Test
+//    public void MountainBikeTest() {
+//        MountainBike mountain = new MountainBike();
+//        mountain.accelerate();
+//        assertEquals(5, mountain.currentSpeed());
+//    }
 
     @Test
     public void MountainBikeTest() {
@@ -54,34 +92,5 @@ public class BicycleTest {
         BikeRideTwo two = new BikeRideTwo(tandem);
         two.ride(tandem);
         assertEquals(15, two.Speed());
-    }
-
-    @Test
-    public void BikeRideThreeTest() {
-        Bicycle tandem = new Tandem();
-        BikeRideThree three = new BikeRideThree(tandem);
-        three.ride(tandem);
-        assertEquals(51, three.Speed());
-    }
-
-    @Test
-    public void RoadBikeSpecTest() {
-        BicycleSpecification roadBikeSpec = new BicycleSpecification(11, 4);
-        Bicycle bicycle = new BicycleFromSpec(roadBikeSpec);
-        BikeRide bikeRide = new BikeRideTwo(bicycle);
-        bikeRide.ride(bicycle);
-        assertEquals(11, roadBikeSpec.getAccelerationSpeed());
-        assertEquals(4, roadBikeSpec.setBrakeSpeed());
-    }
-
-    @Test
-    public void MountainBikeSpecTest() {
-        BicycleSpecification mountainBikeSpec = new BicycleSpecification(5, 3);
-        Bicycle mountainBike = new BicycleFromSpec(mountainBikeSpec);
-
-        BikeRide mBikeRide = new BikeRideOne(mountainBike);
-        mBikeRide.ride(mountainBike);
-        assertEquals(5, mountainBikeSpec.getAccelerationSpeed());
-        assertEquals(3, mountainBikeSpec.setBrakeSpeed());
     }
 }
